@@ -10,12 +10,10 @@ public class OperatorParser {
         operatorMap.put("div", OperatorEnum.OPERATOR_DIVISION);
         operatorMap.put("mod", OperatorEnum.OPERATOR_MODULO);
     }
-    public OperatorEnum parseOperator(String token)
-            throws ParseException {
+    public OperatorEnum parseOperator(String token) throws ParseException {
         OperatorEnum operator = operatorMap.get(token);
         if (operator == null) {
-            throw new
-                    ParseException(String.format(CalcUI.ERROR_TOKEN_PARSE_PATTERN, token), 0);
+            throw new ParseException(String.format("Ошибка ввода: %s", token), 0);
         }
         return operator;
     }

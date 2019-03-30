@@ -4,7 +4,7 @@ public enum OperatorEnum {
     OPERATOR_MULTIPLICATION, OPERATOR_DIVISION,
     OPERATOR_MODULO,
     OPERATOR_UNKNOWN;
-    public static final String ERROR_UNKNOWN_OPERATOR = "Error! Unexpected operator!";
+
     public BigInteger process(BigInteger lhs, BigInteger rhs) {
         switch (this) {
             case OPERATOR_ADDITION:
@@ -18,7 +18,6 @@ public enum OperatorEnum {
             case OPERATOR_MODULO:
                 return lhs.mod(rhs);
         }
-        throw new
-                RuntimeException(ERROR_UNKNOWN_OPERATOR);
+        throw new RuntimeException("Ошибка! Неизвестный оператор");
     }
 }
